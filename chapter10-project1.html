@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>Chapter 10</title>
+<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+   $(document).on("click", "#thumbBox img", function(){
+     
+   var source_src = this.src;
+   var source_file = source_src.replace(/^.*[\\\/]/, '');
+   var source_title = this.title;
+   var source_alt = this.alt;
+     
+      
+       var destSrc = "images/medium/" + source_file;
+       $("#imgManipulated img").attr("src", destSrc);
+       $("#imgManipulated figcaption").html ("<em>"+source_alt+"</em> <br>"+source_title);
+      
+   });
+  
+  
+   var init_opacity = $("#sliderOpacity").val();
+   var init_sat = $("#sliderSaturation").val();
+   var init_bright =$("#sliderBrightness").val();
+   var init_hue =$("#sliderHue").val();
+   var init_gray =$("#sliderGray").val();
+   var init_blur =$("#sliderBlur").val();
+  
+   $("#sliderOpacity").change( function() {
+     
+   $("#imgManipulated img").css('opacity', $(this).val()/100);
+
+});
+      
+       $("#sliderSaturation").change( function() {
+
+});
+      
+       $("#sliderBrightness").change( function() {
+       $("#imgManipulated img").css('opacity', $(this).val()/100);
+
+});
+      
+       $("#sliderHue").change( function() {
+
+});
+      
+       $("#sliderGray").change( function() {
+});
+      
+       $("#sliderBlur").change( function() {
+});
+      
+      
+       //javascript code to reset filter values
+$(".reset_btn").click(function(){
+
+       $("#sliderOpacity").val() = init_opacity;
+           $("#sliderSaturation").val()= init_sat;
+           $("#sliderBrightness").val()= init_bright;
+           $("#sliderHue").val()= init_hue;
+           $("#sliderGray").val()= init_gray;
+           $("#sliderBlur").val()= init_blur;
+       });
+      
+});
+
+
+</script>
+
+<!-- Vinitha's code to set the filters-->
+
+
+</script>
+</body>   
+</html>
